@@ -1,0 +1,19 @@
+{
+  "name": "zepto_wheel",
+  "version": "1.0.0",
+  "description": "大转盘插件",
+  "main": "./dist/zepto.wheel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/352926/zepto_wheel.git"
+  },
+  "author": "352926",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/352926/zepto_wheel/issues"
+  },
+  "homepage": "https://github.com/352926/zepto_wheel#readme"
+}
