@@ -9,7 +9,7 @@
 (function ($) {
     var turntable_config = {
         prizes: [
-            {title: '一等奖', color: '#fe807d'},
+            {title: '一等奖', color: '#fe807d', font_color: '#000'},
             {title: '二等奖', color: '#fe7771'},
             {title: '三等奖', color: '#fe807d'},
             {title: '四等奖', color: '#fe7771'},
@@ -24,6 +24,8 @@
         end_color: '#FF5B5C', //中奖后区块对应背景颜色
         circle_bgcolor: '#ff5859', //大转盘颜色背景颜色
         circle_shadow_bgcolor: '#ff5758', //大转盘阴影颜色
+        prize_border_color: '#ffffff', //奖项与奖项的边框颜色
+        default_font_color: '#ffffff', //奖项字体颜色
         outside_radius: 140, //外圆的半径
         inside_radius: 30, //内圆的半径
         text_radius: 105, //奖品位置距离圆心的距离
@@ -97,7 +99,7 @@
 
                         //创建阴影（两者同时使用） shadowBlur:阴影的模糊级数   shadowColor:阴影颜色 【注：相当耗费资源】
                         ctx.shadowBlur = 1;
-                        ctx.shadowColor = "#fff";
+                        ctx.shadowColor = config.prize_border_color;
 
                         ctx.beginPath();
                         //arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
@@ -113,7 +115,7 @@
                             ctx.fillStyle = config.end_color;
                             ctx.fill();
                         }
-                        ctx.fillStyle = "#fff";
+                        ctx.fillStyle = typeof config.prizes[i].font_color === 'undefined' ? config.default_font_color : config.prizes[i].font_color;
 
                         var text = config.prizes[i].title, line_height = 17, x, y;
                         x = config.width / 2 + Math.cos(angle + arc / 2) * config.text_radius;

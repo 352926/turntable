@@ -27,7 +27,7 @@ gulp.task('css', function () {
 
 gulp.task('script', function () {
 
-    return gulp.src('src/zepto.turntable.js')
+    return gulp.src('src/turntable.js')
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist'));

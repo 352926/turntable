@@ -1,6 +1,6 @@
 {
   "name": "zepto_wheel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "大转盘插件",
   "main": "./dist/zepto.wheel.js",
   "scripts": {

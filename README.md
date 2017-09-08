@@ -53,6 +53,8 @@ $(document).ready(function () {
         width: 300, //大转盘宽度
         height: 300, //大转盘高度
         end_color: '#FF5B5C', //中奖后区块对应背景颜色
+        prize_border_color: '#ffffff', //奖项与奖项的边框颜色
+        default_font_color: '#ffffff', //奖项字体颜色
         circle_bgcolor: '#ff5859', //大转盘颜色背景颜色
         circle_shadow_bgcolor: '#ff5758', //大转盘阴影颜色
         outside_radius: 140, //外圆的半径
