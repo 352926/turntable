@@ -144,6 +144,9 @@
             } else {
                 angles = 360 - angles + 270;
             }
+            if(item === 0) {
+                angles = 271;
+            }
 
             var self = $(this);
 

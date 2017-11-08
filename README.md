@@ -30,7 +30,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (result) {
                 //设置中奖奖品，
-                var prize = result.prize;//比如，prize=1，则大转盘停留在 turntable_config.prizes第一项，中一等奖
+                var prize = result.prize;//比如，prize=1，则大转盘停留在 turntable_config.prizes第一项，中一等奖，当prize=0时：指针停留在两个奖项细缝中，不指向任何一个奖项
                 e.set_prize(prize, function () {
                     alert('恭喜你抽中了xxx');
                 });
