@@ -51,7 +51,7 @@
             self.css('-webkit-animation-delay', '.5s');
             self.html(turntable_tpl());
 
-            if (config.lottery_callback !== undefined && config.bind_go_btn === false) {
+            if (config.bind_go_btn === false) {
                 self.find('.go_btn').on('click', function () {
                     //让大转盘先转动10秒，10秒内如果没有设置中奖奖品则调用error_callback
                     if (turntable_config.is_lock === true) {
@@ -137,14 +137,14 @@
                     '<div class="go_btn" style="-webkit-animation:fd 1s ease both;"></div></div>';
             }
         },
-        set_prize: function (item, callback) {
+        set_prize: function (item, callback, duration) {
             var angles = item * (360 / turntable_config.prizes.length) - (360 / (turntable_config.prizes.length * 2));
             if (angles < 270) {
                 angles = 270 - angles;
             } else {
                 angles = 360 - angles + 270;
             }
-            if(item === 0) {
+            if (item === 0) {
                 angles = 271;
             }
 
@@ -156,7 +156,7 @@
             $canvas.rotate({
                 angle: 0,
                 animateTo: angles + 1800,
-                duration: turntable_config.duration,
+                duration: duration === undefined ? turntable_config.duration : duration,
                 callback: function () {
                     if (callback !== undefined) {
                         callback();
