@@ -62,6 +62,7 @@ $(document).ready(function () {
         text_radius: 105, //奖品位置距离圆心的距离
         start_angle: 1, //开始角度
         duration: 10000, //大转盘旋转时间 10秒
+        lottery_callback_pre_rotate: undefined, //点击抽奖按钮后在转盘滚动前回调函数
         lottery_callback: lottery_callback, //点击抽奖按钮后回调函数
         error_callback: error_callback, //大转盘先转起来，如果10s内异步调用接口还没有返回数据并调用set_prize，，失败回调次方法
         repeat_callback: undefined, //当大转盘正在转动的时候，重复点击时触发

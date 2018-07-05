@@ -31,6 +31,7 @@
         text_radius: 105, //奖品位置距离圆心的距离
         start_angle: 0, //开始角度
         duration: 10000, //大转盘旋转时间 10秒
+        lottery_callback_pre_rotate: undefined, //点击抽奖按钮后在转盘滚动前回调函数
         lottery_callback: undefined, //点击抽奖按钮后回调函数
         error_callback: undefined, //大转盘先转起来，如果10s内异步调用接口还没有返回数据并调用set_prize，，失败回调次方法
         repeat_callback: undefined, //重复点击回调，当大转盘正在转动的时候，重复点击时触发
@@ -53,6 +54,11 @@
 
             if (config.bind_go_btn === false) {
                 self.find('.go_btn').on('click', function () {
+                    if (config.lottery_callback_pre_rotate !== undefined) {
+                        if (!config.lottery_callback_pre_rotate()) {
+                            return;
+                        }
+                    }
                     //让大转盘先转动10秒，10秒内如果没有设置中奖奖品则调用error_callback
                     if (turntable_config.is_lock === true) {
                         //console.log('不要贪心哦~~~');//重复抽取，上次抽取还没有完成
